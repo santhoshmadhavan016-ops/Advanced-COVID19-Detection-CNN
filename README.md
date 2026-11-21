@@ -1,11 +1,27 @@
 # COVID-19 Detection from Chest X-ray Images Using Deep Learning
-[![GitHub Repository](https://img.shields.io/badge/GitHub-Project-black?logo=github)](https://github.com/santhoshmadhavan016-ops/Advanced-COVID19-Detection-CNN)
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-Deep%20Learning-orange?logo=tensorflow)
-![Dataset](https://img.shields.io/badge/Dataset-21%2C165%20Images-green)
-![Models](https://img.shields.io/badge/Models-3-blueviolet)
-![Classes](https://img.shields.io/badge/Classification-4%20Classes-red)
-## Project Overview
+
+<p align="center">
+  <img src="assets/project-banner.png" alt="COVID-19 Detection Project Banner" width="100%">
+</p>
+
+<p align="center">
+  <a href="https://github.com/santhoshmadhavan016-ops/Advanced-COVID19-Detection-CNN">
+    <img src="https://img.shields.io/badge/GitHub-Project-black?logo=github" alt="GitHub">
+  </a>
+  <img src="https://img.shields.io/badge/Python-3.8%2B-blue?logo=python" alt="Python">
+  <img src="https://img.shields.io/badge/TensorFlow-Deep%20Learning-orange?logo=tensorflow" alt="TensorFlow">
+  <img src="https://img.shields.io/badge/Dataset-21%2C165%20Images-green" alt="Dataset">
+  <img src="https://img.shields.io/badge/Models-3-blueviolet" alt="Models">
+  <img src="https://img.shields.io/badge/Classification-4%20Classes-red" alt="Classification">
+</p>
+
+<p align="center">
+  **Deep Learning for Automated Chest X-ray Image Classification**
+</p>
+
+---
+
+## 1. Project Overview
 
 This project presents a deep-learning-based approach for classifying chest X-ray images into four different lung conditions:
 
@@ -28,7 +44,7 @@ The main objective is to compare the performance of different deep learning arch
 
 ---
 
-## Project Objectives
+## 2. Project Objectives
 
 - Develop a deep learning system for four-class chest X-ray classification.
 - Implement Custom CNN, ResNet50, and DenseNet121 architectures.
@@ -39,11 +55,11 @@ The main objective is to compare the performance of different deep learning arch
 
 ---
 
-## Dataset Information
+## 3. Dataset Information
 
 The dataset contains 21,165 chest X-ray images distributed across four classes.
 
-### Dataset Distribution
+### 3.1 Dataset Distribution
 
 | Class | Number of Images |
 |---|---:|
@@ -53,9 +69,7 @@ The dataset contains 21,165 chest X-ray images distributed across four classes.
 | Lung Opacity | 6,012 |
 | **Total** | **21,165** |
 
-### Dataset Split
-
-The dataset is divided into training, validation, and testing sets.
+### 3.2 Dataset Split
 
 | Dataset | Percentage | Images |
 |---|---:|---:|
@@ -66,9 +80,7 @@ The dataset is divided into training, validation, and testing sets.
 
 The dataset split uses a fixed random seed of 42 for reproducibility.
 
-### Dataset Structure
-
-The dataset is organized into separate folders for each class and dataset split.
+### 3.3 Dataset Structure
 
 ```text
 data/
@@ -96,7 +108,7 @@ data/
 
 ---
 
-## System Architecture
+## 4. System Architecture
 
 The overall workflow of the project is:
 
@@ -122,7 +134,7 @@ flowchart TD
 
 ---
 
-## Image Preprocessing
+## 5. Image Preprocessing
 
 The following preprocessing operations are performed before model training:
 
@@ -133,7 +145,7 @@ The following preprocessing operations are performed before model training:
 - Organize images into training, validation, and testing datasets.
 - Apply batch processing during training.
 
-### Preprocessing Configuration
+### 5.1 Preprocessing Configuration
 
 | Parameter | Value |
 |---|---|
@@ -146,23 +158,23 @@ The following preprocessing operations are performed before model training:
 
 ---
 
-## Deep Learning Models
+## 6. Deep Learning Models
 
 Three different CNN architectures are implemented and compared.
 
-### 1. Custom CNN
+### 6.1 Custom CNN
 
 A custom Convolutional Neural Network is developed for the classification of chest X-ray images.
 
 The architecture uses convolutional layers, activation functions, pooling layers, and fully connected layers to learn relevant image features.
 
-### 2. ResNet50
+### 6.2 ResNet50
 
 ResNet50 is a deep residual neural network that uses skip connections to improve information flow through the network.
 
 It is implemented using transfer learning for chest X-ray image classification.
 
-### 3. DenseNet121
+### 6.3 DenseNet121
 
 DenseNet121 is a densely connected convolutional neural network in which feature maps from earlier layers are reused by subsequent layers.
 
@@ -170,7 +182,7 @@ The project uses DenseNet121 as a feature extractor with a trainable classificat
 
 ---
 
-## Model Training Configuration
+## 7. Model Training Configuration
 
 | Parameter | Configuration |
 |---|---|
@@ -184,11 +196,11 @@ The project uses DenseNet121 as a feature extractor with a trainable classificat
 
 ---
 
-## Experimental Results
+## 8. Experimental Results
 
 All three models are evaluated using the same test dataset containing **3,175 images**.
 
-### Overall Performance Comparison
+### 8.1 Overall Performance Comparison
 
 | Metric | Custom CNN | ResNet50 | DenseNet121 |
 |---|---:|---:|---:|
@@ -198,27 +210,25 @@ All three models are evaluated using the same test dataset containing **3,175 im
 | Macro F1-score | 0.9283 | 0.9235 | 0.8774 |
 | Macro ROC-AUC | 0.9875 | 0.9871 | 0.9746 |
 
-### Model Performance Visualizations
-
-#### Model Accuracy Comparison
+### 8.2 Model Accuracy Comparison
 
 ![Model Accuracy Comparison](results/comparison/model_accuracy_comparison.png)
 
-#### Classification Metrics Comparison
+### 8.3 Classification Metrics Comparison
 
 ![Classification Metrics Comparison](results/comparison/classification_metrics_comparison.png)
 
-#### Model ROC-AUC Comparison
+### 8.4 Model ROC-AUC Comparison
 
 ![Model ROC-AUC Comparison](results/comparison/model_roc_auc_comparison.png)
 
-#### Combined ROC Curve Comparison
+### 8.5 Combined ROC Curve Comparison
 
 ![Combined ROC Curve Comparison](results/comparison/combined_three_model_roc_curve.png)
 
 ---
 
-## Class-wise ROC-AUC Comparison
+## 9. Class-wise ROC-AUC Comparison
 
 The following table presents the ROC-AUC scores for each class across the three models.
 
@@ -229,7 +239,7 @@ The following table presents the ROC-AUC scores for each class across the three 
 | Viral Pneumonia | 0.9987 | 0.9989 | 0.9986 |
 | Lung Opacity | 0.9760 | 0.9768 | 0.9631 |
 
-### Result Analysis
+### 9.1 Result Analysis
 
 - Custom CNN and ResNet50 achieved the highest accuracy of 91.81%.
 - Custom CNN achieved the highest macro recall of 0.9315.
@@ -242,7 +252,7 @@ Based on the overall evaluation metrics, Custom CNN demonstrated the strongest o
 
 ---
 
-## Confusion Matrix and ROC Curve Analysis
+## 10. Confusion Matrix and ROC Curve Analysis
 
 Confusion matrices are used to examine correct and incorrect predictions for each of the four classes.
 
@@ -258,12 +268,14 @@ results/
     ├── model_accuracy_comparison.png
     ├── classification_metrics_comparison.png
     ├── model_roc_auc_comparison.png
-    └── combined_three_model_roc_curve.png
+    ├── combined_three_model_roc_curve.png
+    ├── three_model_comparison.csv
+    └── three_model_ranking.csv
 ```
 
 ---
 
-## Grad-CAM Visualization
+## 11. Grad-CAM Visualization
 
 Gradient-weighted Class Activation Mapping (Grad-CAM) is used to visualize important regions of chest X-ray images that influence model predictions.
 
@@ -273,7 +285,7 @@ This provides an additional visual explanation of model behavior.
 
 ---
 
-## Technologies Used
+## 12. Technologies Used
 
 - Python
 - TensorFlow
@@ -289,10 +301,13 @@ This provides an additional visual explanation of model behavior.
 
 ---
 
-## Project Folder Structure
+## 13. Project Folder Structure
 
 ```text
 Advanced-COVID19-Detection-CNN/
+│
+├── assets/
+│   └── project-banner.png
 │
 ├── data/
 │   └── dataset/
@@ -323,27 +338,27 @@ Advanced-COVID19-Detection-CNN/
 
 ---
 
-## Installation and Setup
+## 14. Installation and Setup
 
-### 1. Clone the Repository
+### 14.1 Clone the Repository
 
 ```bash
 git clone https://github.com/santhoshmadhavan016-ops/Advanced-COVID19-Detection-CNN.git
 ```
 
-### 2. Navigate to the Project Directory
+### 14.2 Navigate to the Project Directory
 
 ```bash
 cd Advanced-COVID19-Detection-CNN
 ```
 
-### 3. Create a Virtual Environment
+### 14.3 Create a Virtual Environment
 
 ```bash
 python -m venv .venv
 ```
 
-### 4. Activate the Virtual Environment
+### 14.4 Activate the Virtual Environment
 
 For Windows:
 
@@ -351,17 +366,17 @@ For Windows:
 .venv\Scripts\activate
 ```
 
-### 5. Install Dependencies
+### 14.5 Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 6. Add the Dataset
+### 14.6 Add the Dataset
 
 Place the dataset in the appropriate `data/dataset/` directory following the folder structure described above.
 
-### 7. Run the Project
+### 14.7 Run the Project
 
 Run the required Python scripts from the `src/` directory in the appropriate execution order.
 
@@ -369,7 +384,7 @@ Run the required Python scripts from the `src/` directory in the appropriate exe
 
 ---
 
-## Requirements
+## 15. Requirements
 
 The project dependencies are listed in `requirements.txt`.
 
@@ -385,7 +400,7 @@ h5py
 
 ---
 
-## Limitations
+## 16. Limitations
 
 - The dataset contains an imbalance between the four classes.
 - Performance may vary depending on the training configuration and hardware.
@@ -395,7 +410,7 @@ h5py
 
 ---
 
-## Future Enhancements
+## 17. Future Enhancements
 
 - Improve classification performance using advanced CNN architectures.
 - Explore Vision Transformers and other modern deep learning models.
@@ -406,7 +421,7 @@ h5py
 
 ---
 
-## Conclusion
+## 18. Conclusion
 
 This project implements and compares three deep learning architectures—Custom CNN, ResNet50, and DenseNet121—for four-class chest X-ray image classification.
 
