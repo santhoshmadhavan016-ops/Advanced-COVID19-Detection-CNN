@@ -1,5 +1,10 @@
 # COVID-19 Detection from Chest X-ray Images Using Deep Learning
-
+[![GitHub Repository](https://img.shields.io/badge/GitHub-Project-black?logo=github)](https://github.com/santhoshmadhavan016-ops/Advanced-COVID19-Detection-CNN)
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-Deep%20Learning-orange?logo=tensorflow)
+![Dataset](https://img.shields.io/badge/Dataset-21%2C165%20Images-green)
+![Models](https://img.shields.io/badge/Models-3-blueviolet)
+![Classes](https://img.shields.io/badge/Classification-4%20Classes-red)
 ## Project Overview
 
 This project presents a deep-learning-based approach for classifying chest X-ray images into four different lung conditions:
