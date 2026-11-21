@@ -6,3 +6,4 @@ scikit-learn
 Pillow
 h5py
 streamlit
+huggingface_hub

@@ -8,6 +8,7 @@ import sys
 
 from pathlib import Path
 from PIL import Image
+from huggingface_hub import hf_hub_download
 
 
 # ==================================================
@@ -24,6 +25,8 @@ BASE_DIR = Path(__file__).resolve().parent
 MODELS_DIR = BASE_DIR / "models"
 RESULTS_DIR = BASE_DIR / "results"
 SRC_DIR = BASE_DIR / "src"
+
+HF_REPO_ID = "santhoshmadhavan016/covid19-detection-models"
 
 CLASS_NAMES = [
     "COVID",
@@ -131,7 +134,20 @@ st.divider()
 
 
 # ==================================================
-# 4. MODEL LOADING
+# 4. MODEL FILE DOWNLOAD
+# ==================================================
+
+@st.cache_data
+def download_model_file(filename):
+
+    return hf_hub_download(
+        repo_id=HF_REPO_ID,
+        filename=filename
+    )
+
+
+# ==================================================
+# 5. MODEL LOADING
 # ==================================================
 
 @st.cache_resource
@@ -139,19 +155,27 @@ def load_model(model_name):
 
     if model_name == "Custom CNN":
 
+        model_path = download_model_file(
+            "custom_cnn_best.keras"
+        )
+
         return tf.keras.models.load_model(
-            MODELS_DIR / "custom_cnn_best.keras",
+            model_path,
             compile=False
         )
 
     if model_name == "ResNet50":
+
+        model_path = download_model_file(
+            "resnet50_best.keras"
+        )
 
         preprocess_input = (
             tf.keras.applications.resnet50.preprocess_input
         )
 
         return tf.keras.models.load_model(
-            MODELS_DIR / "resnet50_best.keras",
+            model_path,
             custom_objects={
                 "preprocess_input": preprocess_input
             },
@@ -159,6 +183,10 @@ def load_model(model_name):
         )
 
     if model_name == "DenseNet121":
+
+        weights_path = download_model_file(
+            "densenet121_best_v2.weights.h5"
+        )
 
         sys.path.insert(0, str(SRC_DIR))
 
@@ -168,9 +196,7 @@ def load_model(model_name):
 
         model = module.build_densenet121()
 
-        model.load_weights(
-            MODELS_DIR / "densenet121_best_v2.weights.h5"
-        )
+        model.load_weights(weights_path)
 
         return model
 
@@ -178,7 +204,7 @@ def load_model(model_name):
 
 
 # ==================================================
-# 5. IMAGE PREPROCESSING
+# 6. IMAGE PREPROCESSING
 # ==================================================
 
 def preprocess_image(image):
@@ -208,7 +234,7 @@ def preprocess_image(image):
 
 
 # ==================================================
-# 6. PREDICTION
+# 7. PREDICTION
 # ==================================================
 
 def predict_image(model, image_array):
@@ -232,7 +258,7 @@ def predict_image(model, image_array):
 
 
 # ==================================================
-# 7. GRAD-CAM
+# 8. GRAD-CAM
 # ==================================================
 
 def generate_gradcam(model, model_name, image_array):
@@ -396,7 +422,7 @@ def generate_gradcam(model, model_name, image_array):
 
 
 # ==================================================
-# 8. DISPLAY GRAD-CAM
+# 9. DISPLAY GRAD-CAM
 # ==================================================
 
 def display_gradcam(original_image, heatmap):
@@ -449,7 +475,7 @@ def display_gradcam(original_image, heatmap):
 
 
 # ==================================================
-# 9. SIDEBAR NAVIGATION
+# 10. SIDEBAR NAVIGATION
 # ==================================================
 
 st.sidebar.title("🩻 AI X-ray System")
@@ -477,7 +503,7 @@ st.sidebar.info(
 
 
 # ==================================================
-# 10. DASHBOARD
+# 11. DASHBOARD
 # ==================================================
 
 if page == "Dashboard":
@@ -568,7 +594,7 @@ if page == "Dashboard":
 
 
 # ==================================================
-# 11. X-RAY PREDICTION
+# 12. X-RAY PREDICTION
 # ==================================================
 
 elif page == "X-ray Prediction":
@@ -748,7 +774,7 @@ elif page == "X-ray Prediction":
 
 
 # ==================================================
-# 12. MODEL EVALUATION
+# 13. MODEL EVALUATION
 # ==================================================
 
 elif page == "Model Evaluation":
@@ -915,7 +941,7 @@ elif page == "Model Evaluation":
 
 
 # ==================================================
-# 13. ABOUT PROJECT
+# 14. ABOUT PROJECT
 # ==================================================
 
 elif page == "About Project":
@@ -992,6 +1018,7 @@ elif page == "About Project":
     - Matplotlib
     - Scikit-learn
     - Pillow
+    - Hugging Face Hub
     """)
 
     st.subheader("Explainable AI")
@@ -1015,7 +1042,7 @@ elif page == "About Project":
 
 
 # ==================================================
-# 14. FOOTER
+# 15. FOOTER
 # ==================================================
 
 st.divider()
