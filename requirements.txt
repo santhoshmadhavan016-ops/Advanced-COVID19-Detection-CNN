@@ -5,3 +5,4 @@ matplotlib
 scikit-learn
 Pillow
 h5py
+streamlit
