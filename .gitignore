@@ -1,4 +1,4 @@
-# Python cache
+# Python cache files
 __pycache__/
 *.py[cod]
 *$py.class
@@ -8,34 +8,45 @@ __pycache__/
 venv/
 env/
 
-# Jupyter Notebook
+# Dataset
+/data/
+
+# Trained models
+/models/
+*.h5
+*.keras
+*.weights.h5
+
+# Logs
+/logs/
+*.log
+
+# Results: exclude everything except selected visualizations
+/results/*
+!/results/densenet121/
+/results/densenet121/*
+
+# Include selected DenseNet121 visualizations
+!/results/densenet121/confusion_matrix.png
+!/results/densenet121/roc_curve.png
+!/results/densenet121/gradcam_covid.png
+!/results/densenet121/gradcam_lung_opacity.png
+!/results/densenet121/gradcam_normal.png
+!/results/densenet121/gradcam_viral_pneumonia.png
+
+# Old backup results
+/results/old_results_backup/
+
+# Jupyter Notebook checkpoints
 .ipynb_checkpoints/
 
-# IDE settings
+# Environment variables
+.env
+
+# IDE files
 .vscode/
 .idea/
 
 # Operating system files
 .DS_Store
 Thumbs.db
-desktop.ini
-
-# Temporary files
-*.tmp
-*.log
-
-# Python packaging
-build/
-dist/
-*.egg-info/
-
-# Environment variables and secrets
-.env
-.env.*
-
-# Keep project results and trained models available for version control
-# Check GitHub file-size limits before uploading large model files.
-/data/
-/models/
-/logs/
-/results/old_results_backup/
