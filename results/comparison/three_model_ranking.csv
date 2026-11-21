@@ -1,0 +1,4 @@
+,Accuracy (%),Macro Precision,Macro Recall,Macro F1-score,Macro ROC-AUC
+Custom CNN,1.0,2.0,1.0,1.0,1.0
+ResNet50,1.0,1.0,2.0,2.0,2.0
+DenseNet121,3.0,3.0,3.0,3.0,3.0

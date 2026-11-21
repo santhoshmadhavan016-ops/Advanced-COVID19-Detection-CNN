@@ -1,0 +1,31 @@
+THREE MODEL PERFORMANCE COMPARISON
+==================================
+
+Test dataset: 3,175 images
+Number of classes: 4
+
+PERFORMANCE METRICS
+             Accuracy (%)  Macro Precision  Macro Recall  Macro F1-score  Macro ROC-AUC
+Custom CNN        91.8100           0.9254        0.9315          0.9283         0.9875
+ResNet50          91.8100           0.9258        0.9213          0.9235         0.9871
+DenseNet121       87.0900           0.8658        0.8907          0.8774         0.9746
+
+MODEL RANKING
+             Accuracy (%)  Macro Precision  Macro Recall  Macro F1-score  Macro ROC-AUC
+Custom CNN              1                2             1               1              1
+ResNet50                1                1             2               2              2
+DenseNet121             3                3             3               3              3
+
+BEST MODEL BY METRIC
+
+Accuracy (%): Custom CNN (91.8100)
+Macro Precision: ResNet50 (0.9258)
+Macro Recall: Custom CNN (0.9315)
+Macro F1-score: Custom CNN (0.9283)
+Macro ROC-AUC: Custom CNN (0.9875)
+
+EVALUATION NOTES
+
+All models were evaluated using the same 3,175-image test dataset.
+DenseNet121 macro metrics use the exact values supplied in its evaluation report.
+These results represent experimental model evaluation and do not establish clinical validation.

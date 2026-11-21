@@ -1,0 +1,8 @@
+RESNET50 ROC-AUC RESULTS
+
+COVID: 0.9950
+Normal: 0.9775
+Viral Pneumonia: 0.9989
+Lung_Opacity: 0.9768
+
+Macro ROC-AUC: 0.9871

@@ -1,0 +1,55 @@
+DENSENET121 MODEL EVALUATION
+============================
+
+Test Accuracy: 87.09%
+Macro ROC-AUC: 0.9746
+
+CLASS-WISE ROC-AUC
+COVID: 0.9775
+Normal: 0.9592
+Viral Pneumonia: 0.9986
+Lung_Opacity: 0.9631
+
+CLASSIFICATION REPORT
+
+COVID
+precision: 0.8398576512455516
+recall: 0.8708487084870848
+f1-score: 0.855072463768116
+support: 542.0
+
+Normal
+precision: 0.8936170212765957
+recall: 0.8790058862001308
+f1-score: 0.8862512363996043
+support: 1529.0
+
+Viral Pneumonia
+precision: 0.88
+recall: 0.9801980198019802
+f1-score: 0.927400468384075
+support: 202.0
+
+Lung_Opacity
+precision: 0.8495475113122172
+recall: 0.8325942350332595
+f1-score: 0.8409854423292273
+support: 902.0
+
+SENSITIVITY AND SPECIFICITY
+
+COVID
+Sensitivity: 0.8708
+Specificity: 0.9658
+
+Normal
+Sensitivity: 0.8790
+Specificity: 0.9028
+
+Viral Pneumonia
+Sensitivity: 0.9802
+Specificity: 0.9909
+
+Lung_Opacity
+Sensitivity: 0.8326
+Specificity: 0.9415

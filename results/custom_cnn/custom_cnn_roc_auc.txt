@@ -1,0 +1,8 @@
+CUSTOM CNN ROC-AUC RESULTS
+
+COVID: 0.9991
+Normal: 0.9761
+Viral Pneumonia: 0.9987
+Lung_Opacity: 0.9760
+
+Macro ROC-AUC: 0.9875

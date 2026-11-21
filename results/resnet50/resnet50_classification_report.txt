@@ -1,0 +1,14 @@
+RESNET50 CLASSIFICATION REPORT
+
+Test Accuracy: 91.81%
+
+                 precision    recall  f1-score   support
+
+          COVID     0.9410    0.9114    0.9260       542
+         Normal     0.9235    0.9320    0.9277      1529
+Viral Pneumonia     0.9505    0.9505    0.9505       202
+   Lung_Opacity     0.8884    0.8914    0.8899       902
+
+       accuracy                         0.9181      3175
+      macro avg     0.9258    0.9213    0.9235      3175
+   weighted avg     0.9182    0.9181    0.9181      3175

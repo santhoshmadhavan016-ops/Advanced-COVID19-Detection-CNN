@@ -1,0 +1,30 @@
+CUSTOM CNN EVALUATION RESULTS
+=============================================
+
+Total Test Images: 3175
+Number of Classes: 4
+Test Accuracy: 91.81%
+Macro ROC-AUC: 0.9875
+
+CLASSIFICATION REPORT
+---------------------------------------------
+                 precision    recall  f1-score   support
+
+          COVID     0.9758    0.9668    0.9713       542
+         Normal     0.9154    0.9274    0.9214      1529
+Viral Pneumonia     0.9245    0.9703    0.9469       202
+   Lung_Opacity     0.8860    0.8614    0.8735       902
+
+       accuracy                         0.9181      3175
+      macro avg     0.9254    0.9315    0.9283      3175
+   weighted avg     0.9179    0.9181    0.9179      3175
+
+
+CLASS-WISE ROC-AUC RESULTS
+---------------------------------------------
+COVID: 0.9991
+Normal: 0.9761
+Viral Pneumonia: 0.9987
+Lung_Opacity: 0.9760
+
+Macro ROC-AUC: 0.9875
